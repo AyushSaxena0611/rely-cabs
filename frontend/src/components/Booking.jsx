@@ -23,7 +23,7 @@ function Booking() {
   const handleCheckAvailableCabs = async () => {
     setIsFetchingCabs(true);
     try {
-      const response = await fetch("http://localhost:8000/api/bookings/check", {
+      const response = await fetch("https://rely-cabs.onrender.com/api/bookings/check", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function Booking() {
   const handleCreateBooking = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/bookings/create",
+        "https://rely-cabs.onrender.com/api/bookings/create",
         {
           method: "POST",
           headers: {

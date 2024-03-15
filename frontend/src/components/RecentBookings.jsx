@@ -10,7 +10,7 @@ const RecentBookings = () => {
   useEffect(() => {
     const fetchRecentBookings = async () => {
       try {
-        const data = await fetch("http://localhost:8000/api/bookings/");
+        const data = await fetch("https://rely-cabs.onrender.com/api/bookings/");
         const recentBookingsData = await data.json();
         setRecentBookings(recentBookingsData);
       } catch (error) {
@@ -25,7 +25,7 @@ const RecentBookings = () => {
 
   const handleDeleteBooking = async (bookingId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/bookings/${bookingId}`, {
+      const response = await fetch(`https://rely-cabs.onrender.com/api/bookings/${bookingId}`, {
         method: "DELETE"
       });
       if (!response.ok) {
