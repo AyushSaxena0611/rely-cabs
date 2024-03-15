@@ -9,6 +9,7 @@ This project is a web application for managing a cab system. It allows users to 
 - Provide a user interface for booking cabs
 - Track cab bookings
 - Admin interface for managing cabs and pricing
+- Implementing the "Dijkstra's Algorithm" for the shortest path selection
 
 ## Usage
 
