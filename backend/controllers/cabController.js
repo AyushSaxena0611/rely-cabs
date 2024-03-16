@@ -9,6 +9,16 @@ const getCabs = async (req, res) => {
   }
 };
 
+const getCabById = async (req, res) => {
+  try {
+    const cab = await Cab.findById(req.params.id);
+    res.json(cab);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
 const updateCab = async (req, res) => {
   try {
     const { name, pricePerMinute } = req.body;
@@ -26,4 +36,4 @@ const updateCab = async (req, res) => {
   }
 };
 
-export { getCabs, getCabById , updateCab };
+export { getCabs, getCabById , updateCab }
