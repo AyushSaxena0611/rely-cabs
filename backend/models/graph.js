@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const edgeSchema = new mongoose.Schema({
+const graphSchema = new mongoose.Schema({
   source: {
     type: String,
     required: true,
@@ -15,6 +15,6 @@ const edgeSchema = new mongoose.Schema({
   },
 });
 
-const Edge = mongoose.model("Edge", edgeSchema);
+const Graph = mongoose.model("Graph", graphSchema);
 
-export default Edge;
+export default Graph;

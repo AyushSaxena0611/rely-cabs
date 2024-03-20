@@ -1,13 +1,12 @@
-// utils/findShortestPath.js
-import Edge from "../models/edgeModel.js";
+import Graph from "./models/graph.js"
 
 const findShortestPath = async (source, destination) => {
     console.log(`Finding shortest path from ${source} to ${destination}`);
 
     try {
         // Fetch all edges from the database
-        const edges = await Edge.find();
-        
+        const edges = await Graph.find();
+
         // Build the graph
         const graph = {};
         edges.forEach(edge => {
@@ -18,10 +17,10 @@ const findShortestPath = async (source, destination) => {
         });
 
         // Dijkstra's algorithm
-        const distances = {};
-        const previous = {};
-        const priorityQueue = new PriorityQueue();
-        const visited = new Set();
+        const distances = {}; // Track distances from source to each vertex
+        const previous = {}; // Track previous vertex in shortest path
+        const priorityQueue = new PriorityQueue(); // Priority queue for vertex exploration
+        const visited = new Set(); // Set to track visited vertices
 
         // Initialize distances with infinity, except for the source
         for (const vertex in graph) {

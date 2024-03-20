@@ -1,7 +1,4 @@
 {
-  "name": "rely-cabs",
-  "version": "1.0.0",
-  "description": "A Cab System Booking App",
   "type": "module",
   "main": "server.js",
   "scripts": {
